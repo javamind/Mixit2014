@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 19
+    }
+}
+
+dependencies {
+    compile 'com.github.rjeschke:txtmark:0.11'
+    compile 'com.google.guava:guava:16.0.1'
+    compile 'org.codehaus.jackson:jackson-core-asl:1.9.12'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
+
+
+}

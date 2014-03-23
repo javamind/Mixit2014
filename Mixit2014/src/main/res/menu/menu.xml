@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 Guillaume EHRET
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_search"
+          android:title="@string/description_search"
+          android:icon="@drawable/ic_action_search"
+          android:showAsAction="ifRoom|collapseActionView"
+          android:actionViewClass="android.widget.SearchView"/>
+    <item android:id="@+id/menu_favorites"
+          android:icon="@drawable/ic_action_event"
+          android:showAsAction="ifRoom|collapseActionView"/>
+    <item android:id="@+id/menu_compose_twitter"
+          android:icon="@drawable/ic_action_twitter"
+          android:title="@string/description_compose_twitter"
+          android:orderInCategory="0"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/menu_compose_google"
+          android:icon="@drawable/ic_action_google"
+          android:title="@string/description_compose_google"
+          android:orderInCategory="0"
+          android:showAsAction="ifRoom"/>
+    <item android:id="@+id/menu_refresh"
+          android:icon="@drawable/ic_action_refresh"
+          android:title="@string/description_refresh"
+          android:orderInCategory="1"
+          android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/menu_sync_talk"
+          android:title="@string/description_sync_talk"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+    <item android:id="@+id/menu_sync_speaker"
+          android:title="@string/description_sync_speaker"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+    <item android:id="@+id/menu_sync_membre"
+          android:title="@string/description_sync_membre"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+
+    <item android:id="@+id/menu_about"
+          android:title="@string/about"
+          android:orderInCategory="100"
+          android:showAsAction="never"/>
+
+</menu>
