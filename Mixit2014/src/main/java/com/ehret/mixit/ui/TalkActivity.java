@@ -126,7 +126,7 @@ public class TalkActivity extends AbstractActivity {
                 level.setText(""+((Lightningtalk) conference).getNbVotes());
             }
             name.setText(conference.getTitle());
-            summary.setText(Html.fromHtml(conference.getSummary().trim()));
+            summary.setText(Html.fromHtml(Processor.process(conference.getSummary()).trim()));
            
             descriptif.setText(Html.fromHtml(Processor.process(conference.getDescription()).trim()), TextView.BufferType.SPANNABLE);
             Salle room = Salle.INCONNU;
@@ -145,7 +145,7 @@ public class TalkActivity extends AbstractActivity {
                 salle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        UIUtils.startActivity(SalleActivity.class, talkActivity);
+                        UIUtils.startActivity(Salle1Activity.class, talkActivity);
                     }
                 });
             }

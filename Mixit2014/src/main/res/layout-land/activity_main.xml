@@ -34,12 +34,6 @@
             style="@style/myTextView"
             />
 
-        <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="test land"
-                style="@style/myTextView"
-                />
 
     <fragment android:name="com.ehret.mixit.fragment.WhatsOnFragment"
               android:id="@+id/fragment_whats_on"

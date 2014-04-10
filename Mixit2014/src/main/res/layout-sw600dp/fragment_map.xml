@@ -71,7 +71,7 @@
               android:layout_gravity="center"
               style="@style/myTextView"
               />
-    <TextView android:id="@+id/mapDescriptifTextView"
+    <TextView android:id="@+id/mapDescriptifTextView2"
               android:text="http://www.mix-it.fr/infos/acces"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"

@@ -48,29 +48,42 @@ public class CalendarFragmentJ1 extends AbstractCalendarFragment {
         addViewHeure();
         addViewQuartHeure();
 
-         addViewEventCommun(0, 3, getResources().getString(R.string.calendrier_accueil), UIUtils.createPlageHoraire(25, 8, 0),R.drawable.button_pause_background);
-        addViewEventCommun(3,1,getResources().getString(R.string.calendrier_orga), UIUtils.createPlageHoraire(25, 8, 45),R.drawable.button_pause_background);
-        addViewEventCommun(4,2,getResources().getString(R.string.calendrier_keynote), UIUtils.createPlageHoraire(25, 9, 0),R.drawable.button_ligtalk_background);
-        addViewEventCommun(6,1,getResources().getString(R.string.calendrier_presses), UIUtils.createPlageHoraire(25, 9, 20),R.drawable.button_pause_background);
-        addViewTalk(7, 4, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(25, 9, 45));
-        addViewEventPalge1(11, 2, getString(R.string.calendrier_pause), false, UIUtils.createPlageHoraire(25, 10, 45));
-        addViewWorkshop(7, 6, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(25, 9, 45));
-        addViewTalk(13, 4, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(25, 11, 15));
-        addViewWorkshop(13, 6, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(25, 11, 15));
-        addViewEventPalge1(17, 2, getString(R.string.calendrier_repas), false, UIUtils.createPlageHoraire(25, 12, 15));
-        addViewEventCommun(19, 1, getString(R.string.calendrier_repas), UIUtils.createPlageHoraire(25, 12, 45),R.drawable.button_pause_background);
-        addViewWorkshop(20, 6, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(25, 13, 0));
-        addViewTalk(20, 2, getString(R.string.calendrier_ligthning_small), false, R.drawable.button_ligtalk_background, UIUtils.createPlageHoraire(25, 13, 0));
-        addViewTalk(22, 4, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(25, 13, 30));
-        addViewWorkshop(26, 6, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(25, 14, 30));
-        addViewEventPalge1(26, 2, getString(R.string.calendrier_pause), false, UIUtils.createPlageHoraire(25, 14, 30));
-        addViewTalk(28,4, getResources().getString(R.string.calendrier_conf_small),false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(25, 15, 0));
-        addViewWorkshop(32, 12, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(25, 14, 30));
-        addViewEventPalge1(32, 2, getString(R.string.calendrier_pause), false, UIUtils.createPlageHoraire(25, 16, 0));
-        addViewTalk(34,4, getResources().getString(R.string.calendrier_conf_small),false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(25, 16, 30));
-        addViewEventPalge1(38, 2, getString(R.string.calendrier_pause), false, UIUtils.createPlageHoraire(25, 17, 30));
-        addViewTalk(40,4, getResources().getString(R.string.calendrier_conf_small),false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(25, 18, 0));
-        addViewEventCommun(44,4," ", null,R.drawable.button_pause_background);
+        addViewEventCommun(0,6," ", null,R.drawable.button_empty_background);
+        addViewEventCommun(6, 6, getResources().getString(R.string.calendrier_accueil), UIUtils.createPlageHoraire(29, 8, 30),R.drawable.button_pause_background);
+        addViewEventCommun(12,3,getResources().getString(R.string.calendrier_orga), UIUtils.createPlageHoraire(29, 9, 0),R.drawable.button_pause_background);
+
+        addViewEventCommun(15, 5, getResources().getString(R.string.calendrier_keynote), UIUtils.createPlageHoraire(29, 9, 15),R.drawable.button_ligtalk_background);
+        addViewEventCommun(20, 4, getResources().getString(R.string.calendrier_pause), UIUtils.createPlageHoraire(29, 9, 40), R.drawable.button_pause_background);
+
+        addViewTalk(24, 10, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(29, 10, 0));
+        addViewTalk(34, 4, getResources().getString(R.string.calendrier_pause), false, R.drawable.button_pause_background, UIUtils.createPlageHoraire(29, 10, 50));
+        addViewTalk(38, 10, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(29, 11, 10));
+        addViewWorkshop(24, 24, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(29, 10, 0));
+
+
+        addViewTalk(48, 12,getResources().getString(R.string.calendrier_repas), false, R.drawable.button_pause_background, UIUtils.createPlageHoraire(29, 12, 0));
+        addViewWorkshop(48, 6, getResources().getString(R.string.calendrier_repas), false, R.drawable.button_pause_background, UIUtils.createPlageHoraire(29, 12, 0));
+
+        addViewWorkshop(54, 24, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(29, 12, 30));
+
+        addViewTalk(60, 6, getString(R.string.calendrier_ligthning_small), false, R.drawable.button_ligtalk_background, UIUtils.createPlageHoraire(29, 13, 0));
+        addViewTalk(66, 2, getString(R.string.calendrier_presses), false, R.drawable.button_pause_background, UIUtils.createPlageHoraire(29, 13, 30));
+        addViewTalk(68, 10, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(29, 13, 40));
+
+        addViewEventCommun(78, 4, getResources().getString(R.string.calendrier_pause), UIUtils.createPlageHoraire(29, 14, 30),R.drawable.button_pause_background);
+
+        addViewWorkshop(82  , 24, getResources().getString(R.string.calendrier_atelier), false, UIUtils.createPlageHoraire(29, 14, 50));
+        addViewTalk(82, 10, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(29, 14, 50));
+        addViewTalk(92, 4, getString(R.string.calendrier_pause), false, R.drawable.button_pause_background, UIUtils.createPlageHoraire(29, 15, 40));
+        addViewTalk(96, 10, getResources().getString(R.string.calendrier_conf_small), false, R.drawable.button_talk_background, UIUtils.createPlageHoraire(29, 16, 0));
+
+        addViewEventCommun(106, 4, getResources().getString(R.string.calendrier_pause), UIUtils.createPlageHoraire(29, 16, 50),R.drawable.button_pause_background);
+        addViewEventCommun(110, 5, getResources().getString(R.string.calendrier_keynote), UIUtils.createPlageHoraire(29, 17, 10),R.drawable.button_ligtalk_background);
+        addViewEventCommun(115, 5, getResources().getString(R.string.calendrier_keynote), UIUtils.createPlageHoraire(29, 17, 35),R.drawable.button_ligtalk_background);
+
+        addViewEventCommun(120,12," ", null,R.drawable.button_empty_background);
+        addViewEventCommun(132, 12, getResources().getString(R.string.calendrier_partie), UIUtils.createPlageHoraire(29, 19, 0),R.drawable.button_ligtalk_background);
+
     }
 
 

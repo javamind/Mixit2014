@@ -27,6 +27,7 @@ import com.ehret.mixit.domain.people.Membre;
 import com.ehret.mixit.model.MembreFacade;
 import com.ehret.mixit.utils.FileUtils;
 import com.ehret.mixit.utils.UIUtils;
+import com.github.rjeschke.txtmark.Processor;
 
 /**
  * Activity permettant d'afficher les informations sur une personne participant à Mix-IT
@@ -96,8 +97,8 @@ public class MembreActivity extends AbstractActivity {
         this.membreTitle.setLines(2);
         this.membreUserName.setText(membre.getCompleteName());
         this.membreEntreprise.setText(membre.getCompany());
-        this.personDesciptif.setText(Html.fromHtml(membre.getLongdesc().trim()), TextView.BufferType.SPANNABLE);
-        this.personShortDesciptif.setText(Html.fromHtml(membre.getShortdesc().trim()));
+        this.personDesciptif.setText(Html.fromHtml(Processor.process(membre.getLongdesc().trim())), TextView.BufferType.SPANNABLE);
+        this.personShortDesciptif.setText(Html.fromHtml(Processor.process(membre.getShortdesc().trim())));
 
         Bitmap image = null;
         //Si on est un sponsor on affiche le logo

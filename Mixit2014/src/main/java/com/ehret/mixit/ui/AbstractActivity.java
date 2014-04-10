@@ -119,14 +119,14 @@ public abstract class AbstractActivity extends Activity {
      * Affichage d'un message pour savoir quelle données récupérer
      * @param type
      */
-    private void chargementDonnees(final TypeFile type) {
+    protected void chargementDonnees(final TypeFile type) {
         if (UIUtils.isNetworkAvailable(getBaseContext())) {
             if (FileUtils.isExternalStorageWritable()) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage(getString(type == TypeFile.members ? R.string.dial_message_membre : (type == TypeFile.talks ? R.string.dial_message_talk : R.string.dial_message)))
                         .setPositiveButton(R.string.dial_oui, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                appelerSynchronizer(type);
+                                appelerSynchronizer(type, true  );
                             }
                         })
                         .setNeutralButton(R.string.dial_cancel, new DialogInterface.OnClickListener() {
@@ -148,7 +148,7 @@ public abstract class AbstractActivity extends Activity {
      * Lancement de la synchro
      * @param type
      */
-    private void appelerSynchronizer(TypeFile type) {
+    protected void appelerSynchronizer(TypeFile type, boolean display) {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(this);
         }
@@ -168,7 +168,9 @@ public abstract class AbstractActivity extends Activity {
         progressDialog.setMax(nbMax);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setMessage(getResources().getString(R.string.sync_message));
-        progressDialog.show();
+        if(display){
+            progressDialog.show();
+        }
         SynchronizeMixitAsync synchronizeMixitAsync = new SynchronizeMixitAsync();
         synchronizeMixitAsync.execute(type);
     }

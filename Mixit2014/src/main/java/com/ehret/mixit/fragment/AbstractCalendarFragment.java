@@ -58,7 +58,7 @@ public abstract class AbstractCalendarFragment extends Fragment {
         calendarGrid = (GridLayout) getActivity().findViewById(R.id.planningGrid);
         calendarGrid.removeAllViews();
         calendarGrid.setColumnCount(4);
-        calendarGrid.setRowCount(48);
+        calendarGrid.setRowCount(144);
         calendarGrid.setUseDefaultMargins(true);
         calendarGrid.setBackgroundColor(getResources().getColor(R.color.black));
         dessinerCalendrier();
@@ -109,7 +109,7 @@ public abstract class AbstractCalendarFragment extends Fragment {
                     .addTextColor(getResources().getColor(android.R.color.black))
                     .getView();
             setLayoutAndBorder(textView,
-                    new GridLayout.LayoutParams(GridLayout.spec(i * 4, 4, GridLayout.FILL), GridLayout.spec(0, GridLayout.FILL)),
+                    new GridLayout.LayoutParams(GridLayout.spec(i * 12, 12, GridLayout.FILL), GridLayout.spec(0, GridLayout.FILL)),
                     i == 11, true, true, false,0);
             calendarGrid.addView(textView);
         }
@@ -135,7 +135,7 @@ public abstract class AbstractCalendarFragment extends Fragment {
                 facteur = 2;
                 break;
             case 99 :
-                facteur = 0.9f;
+                facteur = 0.4f;
                 break;
             default:
                     facteur = 1;
@@ -149,7 +149,7 @@ public abstract class AbstractCalendarFragment extends Fragment {
      * Ajout de la colonne des quarts d'heure
      */
     protected void addViewQuartHeure(){
-        for(int i=0 ; i<48 ; i++){
+        for(int i=0 ; i<144 ; i++){
             //Quart d'heure affiche juste un repère
             TextView textView = new TextViewGridBuilder()
                     .buildView(getActivity())
@@ -160,7 +160,7 @@ public abstract class AbstractCalendarFragment extends Fragment {
                     .getView();
             setLayoutAndBorder(textView,
                     new GridLayout.LayoutParams(GridLayout.spec(i,GridLayout.FILL), GridLayout.spec(1, GridLayout.FILL)),
-                    i==47, true, true,false,99);
+                    i==143, true, true,false,99);
             calendarGrid.addView(textView);
         }
     }
@@ -193,12 +193,13 @@ public abstract class AbstractCalendarFragment extends Fragment {
     protected void addViewTalk(int row, int temps, String text, boolean title, int background, final Date heure){
         Button textView = getButton(text, title, background, heure);
         setLayoutAndBorder(textView,
-                new GridLayout.LayoutParams(GridLayout.spec(row, temps, GridLayout.FILL), GridLayout.spec(2, GridLayout.FILL)),
+                new GridLayout.LayoutParams(GridLayout.spec(row, temps==99 ? 1 : temps, GridLayout.FILL), GridLayout.spec(2, GridLayout.FILL)),
                 false, true, true, false,temps);
 
         calendarGrid.addView(textView);
 
     }
+
 
     /**
      * Ajoute un event entre les talks
@@ -226,7 +227,19 @@ public abstract class AbstractCalendarFragment extends Fragment {
      * @param heure
      */
     protected void addViewWorkshop(int row, int temps, String text , boolean title, final Date heure){
-        Button textView = getButton(text, title, R.drawable.button_workshop_background, heure);
+        addViewWorkshop(row, temps, text, title, R.drawable.button_workshop_background, heure);
+    }
+
+    /**
+     * Ajoute un atlier
+     * @param row
+     * @param temps
+     * @param text
+     * @param title
+     * @param heure
+     */
+    protected void addViewWorkshop(int row, int temps, String text , boolean title, int background, final Date heure){
+        Button textView = getButton(text, title, background, heure);
         setLayoutAndBorder(textView,
                 new GridLayout.LayoutParams(GridLayout.spec(row, temps, GridLayout.FILL), GridLayout.spec(3, GridLayout.FILL)),
                 false, true, true,true,temps);

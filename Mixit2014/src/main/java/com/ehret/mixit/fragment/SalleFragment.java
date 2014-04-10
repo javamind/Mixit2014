@@ -24,9 +24,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import com.ehret.mixit.R;
 import com.ehret.mixit.domain.Salle;
-import com.ehret.mixit.ui.SalleActivity;
+import com.ehret.mixit.ui.Salle1Activity;
+import com.ehret.mixit.ui.Salle2Activity;
 import com.ehret.mixit.utils.TableRowBuilder;
 import com.ehret.mixit.utils.TextViewTableBuilder;
 import com.ehret.mixit.utils.UIUtils;
@@ -56,46 +58,53 @@ public class SalleFragment extends Fragment {
         salleTableLayout = (TableLayout) getActivity().findViewById(R.id.salleTableLayout);
         salleTableLayout.removeAllViews();
 
-        salleTableLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UIUtils.startActivity(SalleActivity.class, getActivity());
-            }
-        });
-        createSalle(Salle.SALLE1.getColor(), Salle.SALLE1.getNom(), Salle.SALLE2.getColor(), Salle.SALLE2.getNom(), false);
-        createSalle(Salle.SALLE3.getColor(), Salle.SALLE3.getNom(), Salle.SALLE4.getColor(), Salle.SALLE4.getNom(), false);
-        createSalle(Salle.SALLE5.getColor(), Salle.SALLE5.getNom(), Salle.INCONNU.getColor(), Salle.INCONNU.getNom(), true);
-
+        createSalle(Salle.SALLE1, Salle.SALLE2, false);
+        createSalle(Salle.SALLE3, Salle.SALLE4, false);
+        createSalle(Salle.SALLE5, Salle.SALLE6, false);
+        createSalle(Salle.SALLE7, Salle.SALLE8, false);
+        createSalle(Salle.SALLE9, Salle.INCONNU, false);
     }
 
-    private void createSalle(int color1, String nom1, int color2, String nom2, boolean dernierligne) {
+    private void createSalle(Salle salle1, Salle salle2, boolean dernierligne) {
         TableRow tableRow = new TableRowBuilder().buildTableRow(getActivity())
                 .addNbColonne(2)
                 .addBackground(getResources().getColor(R.color.grey)).getView();
-        createSalle(dernierligne, tableRow, nom1, color1);
-        createSalle(dernierligne, tableRow, nom2, color2);
+        createSalle(dernierligne, tableRow, salle1);
+        createSalle(dernierligne, tableRow, salle2);
         salleTableLayout.addView(tableRow, TableRowBuilder.getLayoutParams());
     }
 
-    private void createSalle(boolean dernierligne, TableRow tableRow, String nom, int color) {
+    private void createSalle(boolean dernierligne, TableRow tableRow, final Salle salle) {
+
+
+
+
         tableRow.addView(new TextViewTableBuilder()
                 .buildView(getActivity())
                 .addText(" ")
                 .addBorders(true, false, dernierligne, true)
                 .addPadding(4, 0, 4)
-                .addBackground(getResources().getColor(color))
+                .addBackground(getResources().getColor(salle.getColor()))
                 .addSize(TypedValue.COMPLEX_UNIT_SP, getResources().getInteger(R.integer.text_size_cal))
                 .getView());
 
-        tableRow.addView(new TextViewTableBuilder()
+        TextView mySalle = new TextViewTableBuilder()
                 .buildView(getActivity())
                 .addAlignement(Gravity.CENTER)
-                .addText(nom)
+                .addText(salle.getNom())
                 .addSize(TypedValue.COMPLEX_UNIT_SP, getResources().getInteger(R.integer.text_size_cal))
                 .addBorders(true, true, dernierligne, true)
                 .addPadding(4, 0, 4)
                 .addBackground(getResources().getColor(android.R.color.white))
                 .addTextColor(getResources().getColor(android.R.color.black))
-                .getView());
+                .getView();
+
+        mySalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIUtils.startActivity(salle.getEtage()==0 ? Salle1Activity.class : Salle2Activity.class, getActivity());
+            }
+        });
+        tableRow.addView(mySalle);
     }
 }

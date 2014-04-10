@@ -29,6 +29,7 @@ import com.ehret.mixit.domain.Salle;
 import com.ehret.mixit.domain.talk.Conference;
 import com.ehret.mixit.domain.talk.Talk;
 import com.ehret.mixit.utils.UIUtils;
+import com.github.rjeschke.txtmark.Processor;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
