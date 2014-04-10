@@ -16,11 +16,13 @@
 package com.ehret.mixit.model;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import com.ehret.mixit.R;
 import com.ehret.mixit.domain.TypeFile;
 import com.ehret.mixit.domain.people.Membre;
 import com.ehret.mixit.domain.talk.Conference;
+import com.ehret.mixit.domain.talk.Favorite;
 import com.ehret.mixit.domain.talk.Lightningtalk;
 import com.ehret.mixit.domain.talk.Talk;
 import com.ehret.mixit.utils.FileUtils;
@@ -129,6 +131,45 @@ public class ConferenceFacade {
             }
         }
         return Ordering.from(getComparatorDate()).sortedCopy(filtrerConferenceParDate(filtrerConference(conferences, filtre)));
+    }
+
+
+    public void setFavorites(Context context, boolean reinialize) {
+            InputStream is = null;
+            JsonParser jp = null;
+            try {
+                //On regarde si fichier telecharge
+                File myFile = FileUtils.getFileJson(context, TypeFile.favorites);
+                if (myFile != null) {
+                    is = new FileInputStream(myFile);
+                    jp = this.jsonFactory.createJsonParser(is);
+                    List<Favorite> talkListe = this.objectMapper.readValue(jp, new TypeReference<List<Favorite>>() {
+                    });
+                    //On recupere les favoris existant si on le demande
+                    SharedPreferences settings = context.getSharedPreferences(UIUtils.PREFS_FAVORITES_NAME, 0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    if(reinialize){
+                        editor.clear();
+                    }
+                    //Les confs passées sont enregistrées
+                    for (Favorite m : talkListe) {
+                        editor.putBoolean(String.valueOf(m.getId()), Boolean.TRUE);
+                    }
+                    editor.commit();
+                }
+            } catch (IOException e) {
+                Log.e(TAG, "Erreur lors de la recuperation des favorites", e);
+            } finally {
+                if (is != null) {
+                    try {
+                        is.close();
+                    } catch (IOException e) {
+                        Log.e(TAG, "Impossible de fermer le fichier favorites", e);
+                    }
+                }
+            }
+
+
     }
 
     /**

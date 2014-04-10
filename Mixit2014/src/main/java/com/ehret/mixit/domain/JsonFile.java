@@ -26,7 +26,8 @@ public enum JsonFile {
     FileTalks(TypeFile.talks, "http://www.mix-it.fr/api/talks"),
     FileLightningTalks(TypeFile.lightningtalks, "http://www.mix-it.fr/api/lightningtalks"),
     FileSponsor(TypeFile.sponsor, "http://www.mix-it.fr/api/members/sponsors"),
-    FileInterest(TypeFile.interests, "http://www.mix-it.fr/api/interests");
+    FileInterest(TypeFile.interests, "http://www.mix-it.fr/api/interests"),
+    FileFavorites(TypeFile.favorites, "http://www.mix-it.fr/api/members/%d/favorites");
 
     private String url;
     private TypeFile type;

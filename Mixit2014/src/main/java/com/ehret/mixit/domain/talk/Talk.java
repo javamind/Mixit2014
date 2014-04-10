@@ -15,6 +15,10 @@
  */
 package com.ehret.mixit.domain.talk;
 
+import com.ehret.mixit.domain.people.Interet;
+
+import java.util.List;
+
 /**
  * Représente aussi bien un atelier qu'une conf
  */
@@ -22,7 +26,6 @@ public class Talk extends Conference {
     private String format;
     private String level;
     private String room;
-
     public String getRoom() {
         return room;
     }
@@ -47,4 +50,6 @@ public class Talk extends Conference {
     public void setLevel(String level) {
         this.level = level;
     }
+
+
 }

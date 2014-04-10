@@ -22,6 +22,9 @@
     <item android:id="@+id/menu_favorites"
           android:icon="@drawable/ic_action_event"
           android:showAsAction="ifRoom|collapseActionView"/>
+    <item android:id="@+id/menu_profile"
+          android:icon="@drawable/ic_action_shuffle"
+          android:showAsAction="ifRoom|collapseActionView"/>
     <item android:id="@+id/menu_compose_twitter"
           android:icon="@drawable/ic_action_twitter"
           android:title="@string/description_compose_twitter"

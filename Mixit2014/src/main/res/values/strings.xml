@@ -27,8 +27,8 @@
 
 	
 	<!-- Import favoris -->
-	<string name="description_link_user">Lié ce compte à l\'application</string>
-	<string name="description_link_user_confirm">Le lien permet de récupérer vos favoris sur le site de Mix-IT. Par contre la synchronisation des liens ne se fait que dans un sens (du site vers l\'application) car le site Mix-IT ne permet pas de les mettre à jour. Le fait de vous lier à un compte supprimera tous les favoris déjà définis</string>
+	<string name="description_link_user">Lié ce compte à l\'application. Le fait de vous lier à votre compte supprimera tous les favoris déjà définis</string>
+	<string name="description_link_user_confirm">Le lien permet de récupérer vos favoris sur le site de Mix-IT. Par contre la synchronisation des liens ne se fait que dans un sens (du site vers l\'application) car le site Mix-IT ne permet pas de les mettre à jour. </string>
 	<string name="description_link_user_error">Aucun compte mix-IT n\'est lié à l\'application. Vous devez aller sur votre profil dans la liste des membres et cliquez sur le bouton lien dans la barre de bouton</string>
     
     <!-- Menu -->

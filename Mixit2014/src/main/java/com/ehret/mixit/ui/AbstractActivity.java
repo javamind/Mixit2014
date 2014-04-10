@@ -48,7 +48,7 @@ import java.util.List;
  * Classe mère de toutes nos activités
  */
 public abstract class AbstractActivity extends Activity {
-    private int progressStatus = 0;
+    protected int progressStatus = 0;
     private ProgressDialog progressDialog;
 
 
@@ -78,6 +78,9 @@ public abstract class AbstractActivity extends Activity {
         }
         if (!(this instanceof TalkActivity)) {
             menu.removeItem(R.id.menu_favorites);
+        }
+        if (!(this instanceof MembreActivity)) {
+            menu.removeItem(R.id.menu_profile);
         }
         return true;
     }
