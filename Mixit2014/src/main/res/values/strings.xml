@@ -25,6 +25,12 @@
     <string name="twitter">On parle de Mix-IT</string>
     <string name="tweetincitation">Parlez de Mix-IT sur Twitter ou Google+ en utilisant les raccourcis proposés dans la barre de bouton. Pour apparaître dans la liste rien de plus simple : Ecrivez un message en utilisant le hashtag #mixit14 </string>
 
+	
+	<!-- Import favoris -->
+	<string name="description_link_user">Lié ce compte à l'application</string>
+	<string name="description_link_user_confirm">Le lien permet de récupérer vos favoris sur le site de Mix-IT. Par contre la synchronisation des liens ne se fait que dans un sens (du site vers l\'application) car le site Mix-IT ne permet pas de les mettre à jour. Le fait de vous lier à un compte supprimera tous les favoris déjà définis</string>
+	<string name="description_link_user_error">Aucun compte mix-IT n\'est lié à l'application. Vous devez aller sur votre profil dans la liste des membres et cliquez sur le bouton lien dans la barre de bouton</string>
+    
     <!-- Menu -->
     <string name="description_refresh">Rafraîchir</string>
     <string name="description_compose_twitter">Tweet</string>
@@ -32,7 +38,9 @@
     <string name="description_no_twitter">Installez au préalable l\'application Twitter</string>
     <string name="description_no_google">Installez au préalable l\'application Google+</string>
     <string name="description_planning">Planning</string>
-    <string name="description_sync_speaker">Raffraîchir données Speakers</string>
+	
+	<string name="description_sync_speaker">Raffraîchir données Speakers</string>
+	<string name="description_sync_favorites">Raffraîchir vos favoris</string>
     <string name="description_sync_talk">Raffraîchir données Talks</string>
     <string name="description_sync_membre">Raffraîchir données Membres</string>
     <string name="description_search">Rechercher</string>
