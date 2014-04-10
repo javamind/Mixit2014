@@ -134,7 +134,7 @@ public class PlanningHoraireFragment extends Fragment {
             if (c.getSpeakers() != null) {
                 for (Long id : c.getSpeakers()) {
                     Membre m = MembreFacade.getInstance().getMembre(getActivity(), TypeFile.speaker.name(), id);
-                    if (m.getCompleteName() != null) {
+                    if (m!=null && m.getCompleteName() != null) {
                         if (!buf.toString().equals("")) {
                             buf.append(", ");
                         }
